@@ -295,61 +295,6 @@ ul li.playing .row span::before
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* MENU HAMBURGUESA 2(Hecho en clase) */
-/* ul{
-    display: none;
-}
-
-ul {
-    margin-top: 0;
-    padding: 0;
-    width: 200px;
-}
-
-li:hover {
-    filter: brightness(110%);
-}
-
-input:checked  ~ ul{
-    display:block;
-  }
-
-  input:checked  ~ label {
-    background: lightgray;
-  }
-
-input {
-    display: none;
-}
-
-label {
-    box-sizing: border-box;
-    display: inline-block;
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-weight: bold;
-    text-align: center;
-    user-select: none;
-  }
-
-  label:hover {
-    background: rgb(167, 167, 167);
-  }
-
-
-
-  li {
-    display: block;
-    background: lightgray;
-    margin: 0;
-    padding: 10px;
-    list-style: none;
-    border-bottom: 1px solid gray;
-  } */
-
   /* BOTONES */
 
 .controls {
@@ -357,9 +302,26 @@ label {
     justify-content: center;
     gap: 10px;
     margin-top: 10px;
+    justify-content: center;
 }
 
 .controls button {
     padding: 10px 15px;
     cursor: pointer;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+}
+
+.controls img {
+    width: 24px;
+}
+
+.controls svg {
+    width: 24px;
+}
+
+.controls .espejo {
+    transform: scaleX(-1)
 }
