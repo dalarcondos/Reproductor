@@ -218,7 +218,11 @@ ul li.playing .row span::before
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .logo {
@@ -345,3 +349,17 @@ label {
     list-style: none;
     border-bottom: 1px solid gray;
   } */
+
+  /* BOTONES */
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.controls button {
+    padding: 10px 15px;
+    cursor: pointer;
+}
