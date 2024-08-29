@@ -1,0 +1,347 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body::-webkit-scrollbar
+{
+   width: 10px;
+}
+body::-webkit-scrollbar-thumb
+{
+   height: 80px;
+   background: #375666;
+   border: 8px solid transparent;
+   border-radius: 12px;
+}
+body::-webkit-scrollbar-thumb:active
+{
+    background: #ff0000;
+}
+body
+{
+    font-family: sans-serif;
+    background-image: url(images/layered-waves-haikei.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+li
+{
+    list-style: none;
+}
+section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2.5%;
+    min-height: 100vh;
+    
+}
+
+.title
+{
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: left;
+    margin-bottom: 10px;
+    background-color: #160812b9;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+    align-self: flex-start;
+}
+.container
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    overflow: hidden;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #160812b9;
+    backdrop-filter: blur(10px);
+    /* border: 2px solid red; */
+}
+.container #main-Video
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    outline: none;
+    border-radius: 5px;
+}
+
+#searchInput{
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    color: #dcdee1;
+    outline: none;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.playlistBx
+{
+    position: relative;
+    height: 100%;
+    margin: 0 10px 0 10px;
+    /* border: 2px solid green; */
+}
+.playlist
+{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 40px);
+    overflow-y: scroll;
+    border-top: 1px solid #ffffff;
+    padding-bottom: 42px;
+}
+.playlist::-webkit-scrollbar
+{
+   width: 10px;
+}
+.playlistBx .row .AllLessons
+{
+   display: block;
+   text-align: left;
+   color: #dcdee1;
+   font-size: 15px;
+   font-weight: 700;
+   margin-left: 20px;
+   line-height: 40px;
+} 
+.playlist li
+{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   list-style: none;
+   color: #dcdee1;
+   cursor: pointer;
+   border: 1px solid transparent;
+   padding: 15px 20px;
+   border-radius: 5px;
+}
+.playlist li:hover
+{
+    border: 0.5px solid #375666;
+}
+.playlist li .row span
+{
+    font-size: 15px;
+    font-weight: 400;
+    color: #dcdee1;
+    text-decoration: none;
+    display: inline-block;
+    text-align: left;
+}
+.playlist li .row span::before
+{
+    content: '\f01d';
+    font-family: FontAwesome;
+    color: #dcdee1;
+    margin-right: 15px;
+    font-size: 20px;
+}
+ul li.playing .row span::before
+{
+    content: '\f28c';
+    font-family: FontAwesome;
+    color: #fff;
+    margin-right: 15px;
+    font-size: 20px;
+}
+.playlist li.playing .row span
+{
+   color: #fff;
+}
+.playlist li span.duration
+{
+    font-size: 15px;
+    font-weight: 400;
+    display: inline-block;
+    color: #dcdee1;
+    text-align: right;
+}
+.playlist li.playing
+{
+   pointer-events: none;
+   background: #1d3541;
+   border: 0.5px solid #1d3541;
+}
+
+@media(max-width: 1092px){
+    section
+    {
+        padding: 30px 10px;
+    }
+    .container
+    {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        overflow: hidden;
+    }
+    .container #main-Video
+    {
+        height: 100%;
+    }
+    .playlistBx
+    {
+        height: 380px;
+        margin-top: 10px;
+    }
+    .playlist
+    {
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 40px);
+        overflow-y: scroll;
+    }
+}
+
+/* MENU HAMBURGUESA */
+
+.navbar {
+    background-color: #160812be;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px;
+    z-index: 1000; 
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: 0.3s;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute; 
+    top: 60px;
+    right: 0.001px;
+    background-color: #160812be;
+    backdrop-filter: blur(10px);
+    width: 100%;
+}
+
+.nav-list li {
+    text-align: right;
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+}
+
+.show {
+    display: flex;
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* MENU HAMBURGUESA 2(Hecho en clase) */
+/* ul{
+    display: none;
+}
+
+ul {
+    margin-top: 0;
+    padding: 0;
+    width: 200px;
+}
+
+li:hover {
+    filter: brightness(110%);
+}
+
+input:checked  ~ ul{
+    display:block;
+  }
+
+  input:checked  ~ label {
+    background: lightgray;
+  }
+
+input {
+    display: none;
+}
+
+label {
+    box-sizing: border-box;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    text-align: center;
+    user-select: none;
+  }
+
+  label:hover {
+    background: rgb(167, 167, 167);
+  }
+
+
+
+  li {
+    display: block;
+    background: lightgray;
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    border-bottom: 1px solid gray;
+  } */
